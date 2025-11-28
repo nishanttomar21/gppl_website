@@ -239,6 +239,58 @@ header.header-scrolled .mobile-menu-btn {
   color: var(--primary);
 }
 
+/* Page Hero (Blue Gradient) */
+.page-hero {
+  min-height: 50vh;
+  background: linear-gradient(135deg, var(--primary) 0%, #1a2542 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/images/hero-bg.png') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.page-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
 /* Hero */
 .hero {
   min-height: 100vh;
@@ -962,6 +1014,51 @@ footer::before {
   margin-top: 1rem;
 }
 
+/* Download Button */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+.download-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
 /* Quote Box */
 .timeline-quote {
   position: relative;
@@ -1353,18 +1450,7 @@ footer::before {
   border: 8px solid rgba(255, 255, 255, 0.8);
 }
 
-/* Light Theme Navigation */
-.light-theme .nav-links a {
-  color: var(--text-dark);
-}
 
-.light-theme .nav-links a:hover {
-  color: var(--primary);
-}
-
-.light-theme .mobile-menu-btn {
-  color: var(--text-dark);
-}
 
 @media (max-width: 992px) {
   .contact-container {
