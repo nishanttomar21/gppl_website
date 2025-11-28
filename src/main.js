@@ -195,23 +195,125 @@ if (productId && products[productId]) {
   }
 }
 
-// 3D Tilt Effect for Product Cards
-document.querySelectorAll('.product-card').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+// Modern Infinite 3D Carousel Logic (3-Set Buffer)
+const carouselContainer = document.querySelector('.carousel-container');
+const carouselTrack = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+// 1. Setup 3 Sets: [Clone 1] [Original] [Clone 2]
+const originalCards = Array.from(document.querySelectorAll('.carousel-card'));
+const cardWidth = 300; // From CSS
+const gap = 32; // 2rem gap
+const singleSetWidth = (cardWidth + gap) * originalCards.length;
 
-    const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg rotation
-    const rotateY = ((x - centerX) / centerX) * 10;
+// Create clones
+const clonesHead = originalCards.map(card => card.cloneNode(true));
+const clonesTail = originalCards.map(card => card.cloneNode(true));
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+// Clear and rebuild track
+carouselTrack.innerHTML = '';
+clonesHead.forEach(c => carouselTrack.appendChild(c));
+originalCards.forEach(c => carouselTrack.appendChild(c));
+clonesTail.forEach(c => carouselTrack.appendChild(c));
+
+// Re-select all cards
+const allCards = document.querySelectorAll('.carousel-card');
+
+// 2. Initial Scroll Position (Start of Middle Set)
+const initializeScroll = () => {
+  carouselContainer.scrollLeft = singleSetWidth;
+};
+
+// 3. Center Highlighting Logic
+const highlightCenterCard = () => {
+  const containerRect = carouselContainer.getBoundingClientRect();
+  const containerCenter = containerRect.left + containerRect.width / 2;
+
+  let closestCard = null;
+  let minDistance = Infinity;
+
+  allCards.forEach(card => {
+    const cardRect = card.getBoundingClientRect();
+    const cardCenter = cardRect.left + cardRect.width / 2;
+    const distance = Math.abs(containerCenter - cardCenter);
+
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestCard = card;
+    }
   });
 
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-  });
+  // Optimization: Only update DOM if the active card changes
+  const currentActive = document.querySelector('.carousel-card.active');
+  if (currentActive !== closestCard) {
+    allCards.forEach(c => c.classList.remove('active'));
+    if (closestCard) {
+      closestCard.classList.add('active');
+    }
+  }
+};
+
+// 4. Infinite Scroll Logic
+const handleInfiniteScroll = () => {
+  // Jump logic
+  if (carouselContainer.scrollLeft >= 2 * singleSetWidth - 50) {
+    carouselContainer.style.scrollBehavior = 'auto';
+    carouselContainer.scrollLeft -= singleSetWidth;
+    carouselContainer.style.scrollBehavior = 'smooth';
+  } else if (carouselContainer.scrollLeft <= 50) {
+    carouselContainer.style.scrollBehavior = 'auto';
+    carouselContainer.scrollLeft += singleSetWidth;
+    carouselContainer.style.scrollBehavior = 'smooth';
+  }
+
+  highlightCenterCard();
+};
+
+carouselContainer.addEventListener('scroll', handleInfiniteScroll);
+window.addEventListener('resize', () => {
+  initializeScroll();
+  highlightCenterCard();
 });
+
+// 5. Navigation Buttons
+if (prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    carouselContainer.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
+    resetAutoScroll();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    carouselContainer.scrollBy({ left: (cardWidth + gap), behavior: 'smooth' });
+    resetAutoScroll();
+  });
+}
+
+// 6. Auto-Scroll Logic
+let autoScrollInterval;
+const startAutoScroll = () => {
+  autoScrollInterval = setInterval(() => {
+    carouselContainer.scrollBy({ left: (cardWidth + gap), behavior: 'smooth' });
+  }, 3000);
+};
+
+const stopAutoScroll = () => {
+  clearInterval(autoScrollInterval);
+};
+
+const resetAutoScroll = () => {
+  stopAutoScroll();
+  startAutoScroll();
+};
+
+// Initialize
+// Wait for layout to be stable
+setTimeout(() => {
+  initializeScroll();
+  highlightCenterCard();
+  startAutoScroll();
+}, 100);
+
+// Pause on hover
+carouselContainer.addEventListener('mouseenter', stopAutoScroll);
+carouselContainer.addEventListener('mouseleave', startAutoScroll);
