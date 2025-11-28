@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon-v3.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Ghaziabad Polymers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="/assets/images/logo-final.png" alt="Ghaziabad Polymers" class="logo-img">
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#products">Our Products</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-padding" style="margin-top: 80px;">
+            <div class="container">
+                <div id="product-content" class="about-content">
+                    <!-- Content will be loaded dynamically -->
+                    <div class="product-image">
+                        <img id="p-image" src="" alt="Product Image">
+                    </div>
+                    <div class="about-text">
+                        <h1 id="p-title" style="margin-bottom: 1rem;">Product Title</h1>
+                        <p id="p-desc" style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-light);">Product
+                            Description</p>
+
+                        <h3 style="margin-bottom: 1rem;">Key Features & Specifications</h3>
+                        <ul id="p-specs"
+                            style="list-style: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">
+                            <!-- Specs list -->
+                        </ul>
+
+                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: white;">Ghaziabad<span>Polymers</span></a>
+                    <p>Your trusted partner for industrial storage and environmental solutions. ISO 9001:2015 Certified
+                        Company.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <span>📍</span>
+                            <span>C-136, Site-1, Buland Shahar Road, Industrial Area, Ghaziabad - 201009, UP,
+                                India</span>
+                        </li>
+                        <li>
+                            <span>📞</span>
+                            <span>08048974667</span>
+                        </li>
+                        <li>
+                            <span>✉️</span>
+                            <span>info@ghaziabadpolymers.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-bar">
+                <p>&copy; 2024 Ghaziabad Polymers Pvt. Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
