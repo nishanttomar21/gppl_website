@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon-v3.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter 2024 | Ghaziabad Polymers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+    <style>
+        .newsletter-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2542 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .newsletter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/assets/images/hero-bg.png') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .newsletter-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .newsletter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: -5rem;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 5rem;
+        }
+
+        .news-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .news-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .pdf-preview {
+            max-width: 300px;
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .pdf-preview:hover {
+            transform: rotate(0) scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="light-theme">
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="/assets/images/logo-final.png" alt="Ghaziabad Polymers" class="logo-img">
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#products">Our Products</a>
+                    <a href="newsletter.html" class="active">Newsletter</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="newsletter-hero">
+            <div class="newsletter-content">
+                <span
+                    style="color: var(--secondary); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">Annual
+                    Report</span>
+                <h1>GPPL Newsletter 2024</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9;">Celebrating a year of innovation, growth, and global
+                    excellence. Explore our journey and future vision.</p>
+            </div>
+        </section>
+
+        <section class="container" style="margin-top: -3rem; position: relative; z-index: 10;">
+            <div class="leadership-message"
+                style="background: white; padding: 3rem; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary);">Leadership Message
+                        </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-bottom: 1.5rem;">
+                            "At Ghaziabad Polymers, our journey has always been defined by a relentless pursuit of
+                            excellence and innovation. As we navigate through 2024, we are witnessing a transformative
+                            shift in the industrial landscape, where sustainability and durability are no longer just
+                            options but necessities. Our commitment to delivering world-class FRP solutions positions us
+                            at the forefront of this evolution."
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main);">
+                            "We are proud to announce our expanded capabilities in handling complex turnkey projects
+                            across the globe. From the Middle East to Africa, our footprint is growing, driven by the
+                            trust our partners place in our engineering precision. We remain dedicated to setting new
+                            benchmarks in the industry."
+                        </p>
+                        <div style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">
+                                CS</div>
+                            <div>
+                                <h4 style="margin: 0; color: var(--primary);">C.V. Singh</h4>
+                                <span style="font-size: 0.9rem; color: var(--text-light);">Director, Ghaziabad Polymers
+                                    Pvt. Ltd.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        style="flex: 1; min-width: 300px; background: var(--bg-light); padding: 2rem; border-radius: 1rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--primary);">Key Highlights 2024</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--secondary);">✓</span>
+                                <strong>Global Expansion:</strong> Successfully commissioned major projects in the
+                                Middle East and Africa.
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--secondary);">✓</span>
+                                <strong>Innovation:</strong> Launched advanced FRP solutions for highly corrosive
+                                environments.
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--secondary);">✓</span>
+                                <strong>Sustainability:</strong> Integrated eco-friendly manufacturing processes
+                                reducing carbon footprint.
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--secondary);">✓</span>
+                                <strong>Workforce Growth:</strong> Team expanded to over 75 skilled professionals.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary);">Industry
+                Insights & Trends</h2>
+            <div class="newsletter-grid" style="margin-top: 0; padding-bottom: 0;">
+                <div class="news-card">
+                    <span class="news-icon">📈</span>
+                    <h3>The Rise of FRP</h3>
+                    <p>The global FRP tank market is projected to reach over $3.3 billion by 2029. Industries are
+                        shifting from traditional materials to FRP due to its superior corrosion resistance and
+                        longevity.</p>
+                </div>
+                <div class="news-card">
+                    <span class="news-icon">💧</span>
+                    <h3>Water Management</h3>
+                    <p>With increasing global focus on water conservation, our ZLD (Zero Liquid Discharge) and advanced
+                        wastewater treatment solutions are in higher demand than ever.</p>
+                </div>
+                <div class="news-card">
+                    <span class="news-icon">🤖</span>
+                    <h3>Smart Manufacturing</h3>
+                    <p>Adoption of IoT and smart monitoring in storage solutions is revolutionizing maintenance. We are
+                        exploring smart tank technologies for real-time monitoring.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 5rem 0; background: linear-gradient(to right, #f8fafc, #e2e8f0);">
+            <div class="container">
+                <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary);">Sustainability at
+                            Core</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-bottom: 1.5rem;">
+                            Sustainability is not just a buzzword for us; it's a manufacturing philosophy. Our FRP
+                            products are designed for longevity, significantly reducing the need for frequent
+                            replacements and minimizing industrial waste.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main);">
+                            We are actively contributing to a greener future by providing robust solutions for:
+                        </p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                            <span
+                                style="background: white; padding: 0.5rem 1rem; border-radius: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-weight: 500; color: var(--primary);">Effluent
+                                Treatment</span>
+                            <span
+                                style="background: white; padding: 0.5rem 1rem; border-radius: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-weight: 500; color: var(--primary);">Sewage
+                                Treatment</span>
+                            <span
+                                style="background: white; padding: 0.5rem 1rem; border-radius: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-weight: 500; color: var(--primary);">Emission
+                                Control</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 300px; text-align: center;">
+                        <div style="font-size: 8rem; line-height: 1;">🌱</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <div class="container">
+                <div class="pdf-preview">
+                    <!-- Placeholder for PDF cover if available, using a generic icon for now -->
+                    <div
+                        style="height: 400px; background: white; display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--primary);">
+                        <span style="font-size: 5rem;">📄</span>
+                        <h3 style="margin-top: 1rem;">2024 Edition</h3>
+                    </div>
+                </div>
+                <h2>Download the Full Newsletter</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-light);">Get detailed insights into our projects, team
+                    achievements, and strategic vision.</p>
+                <a href="/assets/documents/GPPL_Newsletter_2024.pdf" download class="btn btn-primary"
+                    style="padding: 1rem 3rem; font-size: 1.1rem;">
+                    Download PDF (2024)
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: white;">Ghaziabad<span>Polymers</span></a>
+                    <p>Your trusted partner for industrial storage and environmental solutions. ISO 9001:2015 Certified
+                        Company.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <span>📍</span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ghaziabad+Polymers+Pvt+Ltd"
+                                target="_blank">
+                                C-136, Site-1, Buland Shahar Road, Industrial Area, Ghaziabad - 201009, UP, India
+                            </a>
+                        </li>
+                        <li>
+                            <span>📞</span>
+                            <a href="tel:+919871208575">+91 9871208575</a>
+                        </li>
+                        <li>
+                            <span>✉️</span>
+                            <a href="mailto:manusingh@tank-projects.com">manusingh@tank-projects.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-bar">
+                <p>&copy; 2026 Ghaziabad Polymers Pvt. Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

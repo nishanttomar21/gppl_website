@@ -243,9 +243,14 @@ clonesTail.forEach(c => carouselTrack.appendChild(c));
 // Re-select all cards
 const allCards = document.querySelectorAll('.carousel-card');
 
-// 2. Initial Scroll Position (Start of Middle Set)
+// 2. Initial Scroll Position (Start of Middle Set or Saved Position)
 const initializeScroll = () => {
-  carouselContainer.scrollLeft = singleSetWidth;
+  const savedPos = sessionStorage.getItem('carouselScrollPos');
+  if (savedPos) {
+    carouselContainer.scrollLeft = parseInt(savedPos, 10);
+  } else {
+    carouselContainer.scrollLeft = singleSetWidth;
+  }
 };
 
 // 3. Center Highlighting Logic
@@ -349,4 +354,12 @@ carouselContainer.addEventListener('mouseout', (e) => {
   if (e.target.closest('.carousel-card.active')) {
     startAutoScroll();
   }
+});
+
+// Save scroll position on "View Details" click
+// We need to attach this to all buttons including clones
+document.querySelectorAll('.style-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    sessionStorage.setItem('carouselScrollPos', carouselContainer.scrollLeft);
+  });
 });
