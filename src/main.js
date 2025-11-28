@@ -46,7 +46,7 @@ revealElements.forEach(el => revealObserver.observe(el));
 const products = {
   'tanks-vessels': {
     title: 'Tanks & Vessels',
-    image: '/assets/images/product-tank.png',
+    image: '/assets/images/frp-tank-new.png',
     description: 'Our Industrial FRP Tanks and Vessels are engineered for superior chemical resistance and durability. Manufactured using high-grade FRP (Fiber Reinforced Plastic), PP-FRP, PVC-FRP, and PVDF-FRP, these vessels are the ideal solution for storing corrosive chemicals, acids, and alkalis. Designed to withstand high temperatures and harsh industrial environments, they offer a lightweight yet robust alternative to traditional metal tanks. We utilize advanced filament winding and hand lay-up techniques to ensure structural integrity and leak-proof performance.',
     specs: [
       'Material: FRP, PP-FRP, PVC-FRP, PVDF-FRP',
@@ -113,7 +113,7 @@ const products = {
   },
   'pickling-lines': {
     title: 'Continuous Pickling Lines',
-    image: '/assets/images/product-tank.png',
+    image: '/assets/images/frp-tank-new.png',
     description: 'Our Automated Continuous Pickling Lines are designed for the steel wire, tube, and strip industries to efficiently remove surface impurities and scale. These lines feature corrosion-resistant PP/FRP pickling tanks, fume extraction systems, and acid heating units. We offer both push-pull and continuous loop designs that optimize acid consumption and ensure a uniform, high-quality surface finish on metal products.',
     specs: [
       'Type: Push-pull, Continuous Wire/Strip Pickling',
@@ -164,6 +164,29 @@ const products = {
       'Surface: Anti-skid grit, Meniscus, or Chequered plate top',
       'Features: Fire retardant, Non-sparking, UV resistant',
       'Application: Walkways, Platforms, Trench covers, Stair treads'
+    ]
+  },
+  'ventilation': {
+    title: 'Turbo Ventilation',
+    image: '/assets/images/product-blower.png',
+    description: 'Our Turbo Ventilation Systems provide eco-friendly, zero-energy ventilation for industrial sheds and warehouses. These wind-driven roof extractors utilize natural wind energy to exhaust hot air, fumes, and humidity, creating a cooler and healthier work environment. Made from high-quality aluminum or stainless steel with sealed bearings, they operate silently and require no electricity or maintenance.',
+    specs: [
+      'Material: Aluminum / Stainless Steel',
+      'Size: 21 inch / 24 inch throat diameter',
+      'Operation: Wind driven (Zero power cost)',
+      'Features: Weatherproof, Maintenance free, Silent operation',
+      'Benefits: Reduces indoor temperature, Removes stale air'
+    ]
+  },
+  'lining': {
+    title: 'Protective FRP Lining',
+    image: '/assets/images/frp-tank-new.png',
+    description: 'We offer specialized Protective FRP Lining services for concrete and metal surfaces to prevent corrosion and leakage. Our expert application of chemical-resistant resins and glass fiber reinforcement creates a seamless, impermeable barrier that extends the life of your existing tanks, pits, and floors. Ideal for acid storage areas, ETP tanks, and chemical processing floors.',
+    specs: [
+      'Surfaces: Concrete tanks, MS tanks, Floors, Gutters',
+      'Resins: Isophthalic, Bisphenol, Vinyl Ester, Epoxy',
+      'Thickness: 3mm to 10mm as per requirement',
+      'Features: Monolithic (joint-free), Chemical resistant, Repairable'
     ]
   }
 };
@@ -315,5 +338,15 @@ setTimeout(() => {
 }, 100);
 
 // Pause on hover
-carouselContainer.addEventListener('mouseenter', stopAutoScroll);
-carouselContainer.addEventListener('mouseleave', startAutoScroll);
+// Pause ONLY when hovering the active center card
+carouselContainer.addEventListener('mouseover', (e) => {
+  if (e.target.closest('.carousel-card.active')) {
+    stopAutoScroll();
+  }
+});
+
+carouselContainer.addEventListener('mouseout', (e) => {
+  if (e.target.closest('.carousel-card.active')) {
+    startAutoScroll();
+  }
+});
