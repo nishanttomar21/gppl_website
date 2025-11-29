@@ -46,6 +46,8 @@ revealElements.forEach(el => revealObserver.observe(el));
 const products = {
   'tanks-vessels': {
     title: 'Tanks & Vessels',
+    category: 'storage',
+    shortDescription: 'Advanced FRP/PP-FRP chemical storage solutions.',
     image: '/assets/images/frp-tank-new.png',
     description: 'Our Industrial FRP Tanks and Vessels are engineered for superior chemical resistance and durability. Manufactured using high-grade FRP (Fiber Reinforced Plastic), PP-FRP, PVC-FRP, and PVDF-FRP, these vessels are the ideal solution for storing corrosive chemicals, acids, and alkalis. Designed to withstand high temperatures and harsh industrial environments, they offer a lightweight yet robust alternative to traditional metal tanks. We utilize advanced filament winding and hand lay-up techniques to ensure structural integrity and leak-proof performance.',
     specs: [
@@ -58,7 +60,9 @@ const products = {
   },
   'pultrusion': {
     title: 'Pultrusion Products',
-    image: '/assets/images/product-tank.png',
+    category: 'structural',
+    shortDescription: 'High-strength composite profiles and gratings.',
+    image: '/assets/images/pultrusion-products.png',
     description: 'Our Pultrusion Products represent the pinnacle of composite engineering, offering exceptional strength-to-weight ratios. Produced through a continuous molding process, these FRP profiles—including angles, channels, beams, and rods—are designed to replace traditional steel and aluminum in structural applications. They are non-conductive, electromagnetically transparent, and highly resistant to corrosion, making them perfect for use in chemical plants, electrical substations, and coastal infrastructure.',
     specs: [
       'Products: Angles, Channels, I-Beams, Rods, Tubes',
@@ -69,7 +73,9 @@ const products = {
   },
   'fume-exhaust': {
     title: 'Fume Exhaust Systems',
-    image: '/assets/images/product-blower.png',
+    category: 'pollution',
+    shortDescription: 'Industrial toxicity control and air purification.',
+    image: '/assets/images/fume-exhaust-system.png',
     description: 'Our Industrial Fume Exhaust Systems are critical for maintaining a safe and compliant working environment. These comprehensive systems are designed to effectively capture, transport, and treat toxic fumes, gases, and dust generated during industrial processes. The system includes high-efficiency capture hoods, corrosion-resistant FRP ducting, dampers, and wet scrubbers to neutralize harmful pollutants before release. Essential for chemical processing, plating, and pickling industries.',
     specs: [
       'Components: Hoods, Ducts, Dampers, Scrubbers, Centrifugal Blowers',
@@ -80,7 +86,9 @@ const products = {
   },
   'metallic-storage': {
     title: 'Metallic Bulk Storage Solutions',
-    image: '/assets/images/product-tank.png',
+    category: 'storage',
+    shortDescription: 'Heavy-duty MS and SS bulk storage tanks.',
+    image: '/assets/images/metallic-storage-tank.png',
     description: 'We provide large-scale Metallic Bulk Storage Solutions fabricated with precision for the storage of bulk chemicals, petroleum products, and water. Constructed from high-quality Mild Steel (MS) and Stainless Steel (SS), these tanks are designed to meet rigorous international standards like API 650. Our fabrication process includes rigorous quality checks, including radiography and hydro-testing, ensuring safety and reliability for high-volume storage needs.',
     specs: [
       'Material: Mild Steel (MS), Stainless Steel (SS 304/316)',
@@ -91,7 +99,9 @@ const products = {
   },
   'waste-water': {
     title: 'Effluent Treatment Plant',
-    image: '/assets/images/product-treatment.png',
+    category: 'pollution',
+    shortDescription: 'Zero Liquid Discharge (ZLD) water systems.',
+    image: '/assets/images/etp-plant.png',
     description: 'Our Effluent Treatment Plants (ETP) and Sewage Treatment Plants (STP) are advanced environmental solutions designed to purify industrial wastewater. We employ multi-stage treatment processes including physical, chemical, and biological methods (MBBR, SBR, MBR) to remove toxic contaminants, heavy metals, and organic pollutants. Our systems ensure zero liquid discharge (ZLD) compliance and allow for the recycling of treated water for non-potable uses.',
     specs: [
       'Types: ETP, STP, WTP (Water Treatment Plant)',
@@ -102,7 +112,9 @@ const products = {
   },
   'toilet-cleaner': {
     title: 'Toilet Cleaner Plants',
-    image: '/assets/images/product-treatment.png',
+    category: 'machinery',
+    shortDescription: 'Automated manufacturing setups for home care.',
+    image: '/assets/images/toilet-cleaner-plant.png',
     description: 'We offer turnkey manufacturing plant setups for the production of toilet cleaners, floor cleaners, and home care products. Our plants are designed for efficiency and hygiene, featuring high-grade Stainless Steel (SS 316) or Polypropylene (PP) mixing vessels, storage tanks, and automated filling lines. The system ensures consistent product quality, precise mixing ratios, and safe handling of corrosive ingredients like hydrochloric acid.',
     specs: [
       'Capacity: 500 Ltr to 5000 Ltr per batch',
@@ -113,7 +125,9 @@ const products = {
   },
   'pickling-lines': {
     title: 'Continuous Pickling Lines',
-    image: '/assets/images/frp-tank-new.png',
+    category: 'machinery',
+    shortDescription: 'Continuous steel wire and strip processing.',
+    image: '/assets/images/pickling-line.png',
     description: 'Our Automated Continuous Pickling Lines are designed for the steel wire, tube, and strip industries to efficiently remove surface impurities and scale. These lines feature corrosion-resistant PP/FRP pickling tanks, fume extraction systems, and acid heating units. We offer both push-pull and continuous loop designs that optimize acid consumption and ensure a uniform, high-quality surface finish on metal products.',
     specs: [
       'Type: Push-pull, Continuous Wire/Strip Pickling',
@@ -124,7 +138,9 @@ const products = {
   },
   'frp-moulded': {
     title: 'FRP Moulded Equipments',
-    image: '/assets/images/product-tank.png',
+    category: 'structural',
+    shortDescription: 'Tailored composite components and guards.',
+    image: '/assets/images/frp-moulded-parts.png',
     description: 'We specialize in custom FRP Moulded Equipments, delivering tailored solutions for complex industrial needs. From intricate pipe fittings and flanges to specialized covers and machine guards, our moulded products offer superior finish and dimensional accuracy. Utilizing processes like Resin Transfer Moulding (RTM) and Compression Moulding, we produce components that are lightweight, high-strength, and resistant to chemical attack.',
     specs: [
       'Process: Hand Layup, RTM, Compression Moulding',
@@ -135,6 +151,8 @@ const products = {
   },
   'roofing-sheets': {
     title: 'FRP Roofing Sheets',
+    category: 'structural',
+    shortDescription: 'Weather-resistant industrial roofing.',
     image: '/assets/images/product-tank.png',
     description: 'Our FRP Roofing Sheets are the preferred choice for industrial roofing and cladding, offering excellent light transmission and weather resistance. Unlike metal sheets, they do not rust or corrode in humid or chemical environments. Available in various profiles (corrugated, trapezoidal) and colors, they are UV stabilized to prevent yellowing and provide a long service life with minimal maintenance.',
     specs: [
@@ -146,6 +164,8 @@ const products = {
   },
   'blowers': {
     title: 'Centrifugal Blowers',
+    category: 'pollution',
+    shortDescription: 'High-pressure ventilation and exhaust units.',
     image: '/assets/images/product-blower.png',
     description: 'High-performance Industrial Centrifugal Blowers designed for demanding air handling applications. Constructed from corrosion-resistant materials like PP, FRP, and SS, these blowers are ideal for exhausting corrosive fumes and gases. They feature dynamically balanced impellers for vibration-free operation and are available in various pressure and volume configurations to suit specific ventilation needs.',
     specs: [
@@ -157,6 +177,8 @@ const products = {
   },
   'moulded-pultruded-gratings': {
     title: 'Machine Moulded and Pultruded Gratings',
+    category: 'structural',
+    shortDescription: 'Heavy-duty industrial walkways and platforms.',
     image: '/assets/images/product-tank.png',
     description: 'We offer a premium range of FRP Gratings, available in both Machine Moulded and Pultruded variants. Our Moulded Gratings offer bi-directional strength and excellent impact resistance, making them perfect for platforms and walkways. Pultruded Gratings provide superior unidirectional strength for heavy load-bearing applications over longer spans. Both types are non-conductive, fire-retardant, and corrosion-resistant, offering a safe and durable alternative to steel gratings.',
     specs: [
@@ -168,6 +190,7 @@ const products = {
   },
   'ventilation': {
     title: 'Turbo Ventilation',
+    hidden: true,
     image: '/assets/images/product-blower.png',
     description: 'Our Turbo Ventilation Systems provide eco-friendly, zero-energy ventilation for industrial sheds and warehouses. These wind-driven roof extractors utilize natural wind energy to exhaust hot air, fumes, and humidity, creating a cooler and healthier work environment. Made from high-quality aluminum or stainless steel with sealed bearings, they operate silently and require no electricity or maintenance.',
     specs: [
@@ -180,6 +203,7 @@ const products = {
   },
   'lining': {
     title: 'Protective FRP Lining',
+    hidden: true,
     image: '/assets/images/frp-tank-new.png',
     description: 'We offer specialized Protective FRP Lining services for concrete and metal surfaces to prevent corrosion and leakage. Our expert application of chemical-resistant resins and glass fiber reinforcement creates a seamless, impermeable barrier that extends the life of your existing tanks, pits, and floors. Ideal for acid storage areas, ETP tanks, and chemical processing floors.',
     specs: [
@@ -223,6 +247,39 @@ const carouselContainer = document.querySelector('.carousel-container');
 const carouselTrack = document.querySelector('.carousel-track');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
+
+// Generate Product Cards Dynamically
+const generateProductCards = () => {
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  track.innerHTML = ''; // Clear existing content
+
+  Object.entries(products).forEach(([id, product]) => {
+    if (product.hidden) return; // Skip hidden products
+
+    const card = document.createElement('div');
+    card.className = 'carousel-card';
+    card.dataset.category = product.category || 'all';
+
+    card.innerHTML = `
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="${product.image}" alt="${product.title}">
+        </div>
+        <div class="card-content">
+          <h3>${product.title}</h3>
+          <p>${product.shortDescription || product.description.split('.')[0] + '.'}</p>
+          <a href="product.html?id=${id}" class="style-btn">View Details</a>
+        </div>
+      </div>
+    `;
+    track.appendChild(card);
+  });
+};
+
+// Call generation before carousel init
+generateProductCards();
 
 // 1. Setup 3 Sets: [Clone 1] [Original] [Clone 2]
 const originalCards = Array.from(document.querySelectorAll('.carousel-card'));
