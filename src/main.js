@@ -1,18 +1,4 @@
-// Mobile Menu Toggle
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
 const header = document.querySelector('header');
-
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-// Close menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
-});
 
 // Header Scroll Effect
 window.addEventListener('scroll', () => {
@@ -280,6 +266,26 @@ const generateProductCards = () => {
 
 // Call generation before carousel init
 generateProductCards();
+
+// Mobile Menu Toggle
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuBtn.classList.remove('active');
+    });
+  });
+}
+
 
 // 1. Setup 3 Sets: [Clone 1] [Original] [Clone 2]
 const originalCards = Array.from(document.querySelectorAll('.carousel-card'));

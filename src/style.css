@@ -1,3 +1,5 @@
+@import 'responsive.css';
+
 :root {
   --primary: #0B1120;
   --primary-light: #1e293b;
@@ -145,7 +147,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  background: transparent;
   z-index: 1000;
   transition: all 0.3s ease;
   border-bottom: none;
@@ -237,6 +239,32 @@ header.header-scrolled .nav-links a:hover {
 
 header.header-scrolled .mobile-menu-btn {
   color: var(--primary);
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+header.header-scrolled .mobile-menu-btn span {
+  background-color: var(--primary);
+}
+
+/* Active State Animation */
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Page Hero (Blue Gradient) */
