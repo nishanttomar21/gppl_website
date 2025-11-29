@@ -275,6 +275,8 @@ if (menuBtn && navLinks) {
   menuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     menuBtn.classList.toggle('active');
+    const isExpanded = menuBtn.classList.contains('active');
+    menuBtn.setAttribute('aria-expanded', isExpanded);
   });
 
   // Close menu when a link is clicked
@@ -282,6 +284,7 @@ if (menuBtn && navLinks) {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
       menuBtn.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
     });
   });
 }
