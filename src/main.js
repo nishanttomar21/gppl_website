@@ -190,7 +190,7 @@ const products = {
   'lining': {
     title: 'Protective FRP Lining',
     hidden: true,
-    image: '/assets/images/frp-tank-new.png',
+    image: 'assets/images/frp-tank-new.png',
     description: 'We offer specialized Protective FRP Lining services for concrete and metal surfaces to prevent corrosion and leakage. Our expert application of chemical-resistant resins and glass fiber reinforcement creates a seamless, impermeable barrier that extends the life of your existing tanks, pits, and floors. Ideal for acid storage areas, ETP tanks, and chemical processing floors.',
     specs: [
       'Surfaces: Concrete tanks, MS tanks, Floors, Gutters',
@@ -200,6 +200,28 @@ const products = {
     ]
   }
 };
+
+// Fix for GitHub Pages: Update image paths with correct base URL
+// Vite will handle relative paths in imports, but for string literals we might need this
+// However, if we use relative paths in the object, we might not need the prefix if we are careful.
+// Let's try using the new URL(..., import.meta.url).href pattern which is the Vite way.
+// BUT, refactoring the whole object is risky.
+// Let's stick to the previous plan but with relative paths in the object.
+const basePath = import.meta.env.BASE_URL;
+Object.keys(products).forEach(key => {
+  // If path is relative (no leading slash), we might need to prepend base if not handled by Vite
+  // Actually, for public assets, we should keep them relative to the root.
+  // If we use 'assets/...', it expects assets to be in the same dir as main.js? No.
+  // Let's use the absolute path logic but let Vite resolve it.
+  // Wait, public folder assets are served at root.
+  // If base is /repo/, then /repo/assets/... is correct.
+  // So we need to prepend base.
+  if (products[key].image && !products[key].image.startsWith('http')) {
+    // Remove leading slash if present to avoid double slash
+    const cleanPath = products[key].image.startsWith('/') ? products[key].image.substring(1) : products[key].image;
+    products[key].image = basePath + cleanPath;
+  }
+});
 
 // Check for Product Page
 const urlParams = new URLSearchParams(window.location.search);
@@ -301,10 +323,13 @@ const clonesHead = originalCards.map(card => card.cloneNode(true));
 const clonesTail = originalCards.map(card => card.cloneNode(true));
 
 // Clear and rebuild track
-carouselTrack.innerHTML = '';
-clonesHead.forEach(c => carouselTrack.appendChild(c));
-originalCards.forEach(c => carouselTrack.appendChild(c));
-clonesTail.forEach(c => carouselTrack.appendChild(c));
+// Clear and rebuild track
+if (carouselTrack) {
+  carouselTrack.innerHTML = '';
+  clonesHead.forEach(c => carouselTrack.appendChild(c));
+  originalCards.forEach(c => carouselTrack.appendChild(c));
+  clonesTail.forEach(c => carouselTrack.appendChild(c));
+}
 
 // Re-select all cards
 const allCards = document.querySelectorAll('.carousel-card');
