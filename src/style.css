@@ -288,7 +288,7 @@ header.header-scrolled .mobile-menu-btn span {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('assets/images/hero-bg.png') center/cover no-repeat;
+  /* background: url('assets/images/hero-bg.png') center/cover no-repeat; */
   opacity: 0.1;
   z-index: 0;
 }
