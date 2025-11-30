@@ -25,6 +25,7 @@
             position: relative;
             overflow: hidden;
             padding-top: 80px;
+            padding-bottom: 4rem;
         }
 
         .about-hero::before {
@@ -56,7 +57,8 @@
         .about-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            width: 100%;
+            max-width: 1280px;
             padding: 0 2rem;
             display: flex;
             flex-direction: column;
@@ -80,9 +82,9 @@
         }
 
         .about-content h1 {
-            font-size: 5rem;
-            line-height: 1.3;
-            margin-bottom: 2.5rem;
+            font-size: 4.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
             -webkit-background-clip: text;
@@ -91,15 +93,66 @@
             opacity: 0;
             animation: fadeInUp 1s ease forwards 0.3s;
             text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
         }
 
-        .about-content p {
-            font-size: 1.5rem;
-            line-height: 2;
-            color: #cbd5e1;
-            max-width: 600px;
+        .hero-tagline-capsule {
+            margin-top: 3rem;
+            max-width: 900px;
+            position: relative;
+            padding: 1.5rem 3rem;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 100px;
+            border: 2px solid transparent;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
+                linear-gradient(to right, #22d3ee, #3b82f6, #a855f7);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(34, 211, 238, 0.2);
             opacity: 0;
             animation: fadeInUp 1s ease forwards 0.6s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-tagline-capsule:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 50px rgba(34, 211, 238, 0.4);
+        }
+
+        .hero-tagline-capsule p {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #e2e8f0;
+            margin: 0;
+            letter-spacing: 0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tagline-capsule .highlight {
+            font-weight: 700;
+            background: linear-gradient(to right, #22d3ee, #3b82f6, #a855f7, #22d3ee);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 4s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.3));
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 300% center;
+            }
         }
 
         @keyframes fadeInDown {
@@ -315,7 +368,10 @@
             <div class="about-content">
                 <span class="hero-badge">Since 1994</span>
                 <h1>Engineering<br>Excellence</h1>
-                <p>We don't just manufacture tanks; we build the infrastructure for a sustainable future.</p>
+                <div class="hero-tagline-capsule">
+                    <p>We don't just manufacture tanks; we build the infrastructure for a <span
+                            class="highlight">sustainable future</span></p>
+                </div>
             </div>
         </section>
 
