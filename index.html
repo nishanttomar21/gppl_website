@@ -11,8 +11,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/gppl_website/assets/main-GwcZdQVL.js"></script>
-  <link rel="stylesheet" crossorigin href="/gppl_website/assets/main-CxfKroLx.css">
+  <script type="module" crossorigin src="/gppl_website/assets/main-lSLPMPgn.js"></script>
+  <link rel="stylesheet" crossorigin href="/gppl_website/assets/main-JlEPMPiP.css">
 </head>
 
 <body>
@@ -31,7 +31,14 @@
         </button>
         <div class="nav-links" id="navLinks">
           <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
+          <div class="nav-dropdown">
+            <a href="#" class="dropdown-toggle">The Corporate <span class="dropdown-arrow"></span></a>
+            <div class="dropdown-menu">
+              <a href="about.html">About Us</a>
+              <a href="journey.html">Our Journey</a>
+              <a href="clientele.html">Clientele</a>
+            </div>
+          </div>
           <a href="#products">Our Products</a>
           <a href="newsletter.html">Newsletter</a>
           <a href="contact.html">Contact</a>
@@ -63,90 +70,6 @@
       </div>
     </section>
 
-    <section id="journey" class="section-padding journey-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our Journey</h2>
-          <p>30 Years of GPPL - Serving Customers Since 1995 Globally</p>
-        </div>
-
-        <div class="timeline">
-          <!-- 1995 -->
-          <div class="timeline-item left reveal">
-            <div class="timeline-content glass-effect">
-              <div class="timeline-img">
-                <img src="assets/images/timeline-1995.jpg" alt="1995 Factory"
-                  onerror="this.src='https://placehold.co/600x400/0B1120/FFF?text=1995'">
-              </div>
-              <span class="year">1995</span>
-              <h3>The Beginning</h3>
-              <p>Established in 1995 with a vision to achieve excellence, GPPL began modestly with 20 employees and a
-                small facility, crafting quality roofing sheets, moulded components, and storage tanks - driven by
-                determination and purpose.</p>
-            </div>
-          </div>
-
-          <!-- 2004 -->
-          <div class="timeline-item right reveal">
-            <div class="timeline-content glass-effect">
-              <div class="timeline-img">
-                <img src="assets/images/timeline-2004.jpg" alt="2004 Expansion"
-                  onerror="this.src='https://placehold.co/600x400/0B1120/FFF?text=2004'">
-              </div>
-              <span class="year">2004</span>
-              <h3>Innovation & Expansion</h3>
-              <p>Within a decade, GPPL evolved into a symbol of innovation and progress — expanding its facility to
-                6,000 sq. yards, strengthening its workforce, and introducing advanced solutions like fume exhaust and
-                chemical handling systems. Every milestone brought us closer to redefining industry standards.</p>
-            </div>
-          </div>
-
-          <!-- Quote Section -->
-          <div class="timeline-quote reveal">
-            <div class="quote-box glass-effect">
-              <h3>From Vision to Victory - 30 Years Strong!</h3>
-              <p>"From humble beginnings to global recognition, our 30-year journey stands as a testament to quality,
-                integrity, and teamwork. With gratitude and pride, I thank every hand and heart that has shaped GPPL's
-                30 years of excellence."</p>
-              <cite>- C.V. Singh, Founder</cite>
-            </div>
-          </div>
-
-          <!-- 2016 -->
-          <div class="timeline-item left reveal">
-            <div class="timeline-content glass-effect">
-              <div class="timeline-img">
-                <img src="assets/images/timeline-2016.jpg" alt="2016 Global"
-                  onerror="this.src='https://placehold.co/600x400/0B1120/FFF?text=2016'">
-              </div>
-              <span class="year">2016</span>
-              <h3>Global Recognition</h3>
-              <p>By 2016, GPPL had expanded beyond India's borders, earning global recognition. Guided by our founder's
-                vision for a sustainable future, we introduced Effluent and Sewage Treatment Plants, reinforcing our
-                commitment to environmental responsibility and technological excellence.</p>
-            </div>
-          </div>
-
-          <!-- 2025 -->
-          <div class="timeline-item right reveal">
-            <div class="timeline-content glass-effect">
-              <div class="timeline-img">
-                <img src="assets/images/timeline-2025.jpg" alt="2025 Future"
-                  onerror="this.src='https://placehold.co/600x400/0B1120/FFF?text=2025'">
-              </div>
-              <span class="year">2025</span>
-              <h3>Powerhouse of Innovation</h3>
-              <p>In 2025, GPPL stands as a powerhouse of innovation and excellence — a trusted global name with over 200
-                skilled professionals and a hundredfold growth in turnover since inception. We have expanded our product
-                portfolio to include moulded gratings, pultruded sections, decking sheets, and cable trays.</p>
-              <p class="mt-2">To support this expansion, we have enhanced our infrastructure with cutting-edge Ritmo
-                polyfusion butt welding machinery and advanced pultrusion machinery of 20-ton and 25-ton capacity.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="products" class="section-padding products">
       <div class="container">
         <div class="section-header">
@@ -166,7 +89,6 @@
           <button class="nav-btn next-btn" aria-label="Next Product">❯</button>
         </div>
 
-      </div>
       </div>
     </section>
   </main>
