@@ -11,6 +11,8 @@ export default defineConfig(({ command }) => ({
                 contact: resolve(__dirname, 'contact.html'),
                 newsletter: resolve(__dirname, 'newsletter.html'),
                 product: resolve(__dirname, 'product.html'),
+                journey: resolve(__dirname, 'journey.html'),
+                clientele: resolve(__dirname, 'clientele.html'),
             },
         },
     },
