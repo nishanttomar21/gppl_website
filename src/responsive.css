@@ -77,6 +77,16 @@
         font-size: 2rem;
     }
 
+    /* About Section on Home */
+    #about > .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    #about h2 {
+        font-size: 2rem !important;
+    }
+
     /* Timeline */
     .timeline::after {
         left: 31px;
