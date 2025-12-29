@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="assets/images/favicon-v3.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Journey | Ghaziabad Polymers - 30 Years of Excellence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Journey Page Hero */
+        .journey-hero {
+            min-height: 85vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .journey-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(8, 145, 178, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.08) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        /* Floating particles animation */
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(34, 211, 238, 0.3);
+            border-radius: 50%;
+            animation: floatUp 15s infinite linear;
+        }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            left: 40%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(4) {
+            left: 55%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(5) {
+            left: 70%;
+            animation-delay: 8s;
+        }
+
+        .particle:nth-child(6) {
+            left: 85%;
+            animation-delay: 10s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .journey-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            padding: 2rem;
+        }
+
+        .journey-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 50px;
+            color: var(--secondary);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        .journey-hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #22d3ee 50%, #a855f7 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease infinite, fadeInUp 1s ease forwards 0.3s;
+            opacity: 0;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+        }
+
+        .journey-hero-subtitle {
+            font-size: 1.35rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .journey-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.7s;
+        }
+
+        .journey-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .journey-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(34, 211, 238, 0.1);
+            border-color: rgba(34, 211, 238, 0.3);
+        }
+
+        .journey-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            line-height: 1;
+        }
+
+        .journey-stat-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+
+        /* Modern Timeline Section - FIXED LAYOUT */
+        .modern-timeline-section {
+            background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .timeline-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-intro h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .timeline-intro p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        /* Timeline Container with Central Line */
+        .modern-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Central timeline line - positioned behind content */
+        .modern-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--secondary) 0%, #a855f7 100%);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            z-index: 0;
+        }
+
+        /* Timeline Milestones */
+        .timeline-milestone {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 0;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .timeline-milestone:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Left side content (odd items) */
+        .milestone-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Right side content */
+        .milestone-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* First item: Image left, Content right */
+        .timeline-milestone:nth-child(odd) .milestone-image {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .timeline-milestone:nth-child(odd) .timeline-node-wrapper {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .timeline-milestone:nth-child(odd) .milestone-content {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        /* Even items: Content left, Image right */
+        .timeline-milestone:nth-child(even) .milestone-content {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: right;
+        }
+
+        .timeline-milestone:nth-child(even) .timeline-node-wrapper {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .timeline-milestone:nth-child(even) .milestone-image {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .timeline-milestone:nth-child(even) .milestone-highlights {
+            justify-content: flex-end;
+        }
+
+        .timeline-milestone:nth-child(even) .milestone-year {
+            justify-content: flex-end;
+        }
+
+        /* Timeline Node Wrapper - center column */
+        .timeline-node-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        .timeline-node {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 6px rgba(8, 145, 178, 0.2), 0 0 20px rgba(8, 145, 178, 0.3);
+            position: relative;
+            z-index: 5;
+        }
+
+        .timeline-node::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+            }
+        }
+
+        .milestone-year {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+        }
+
+        .milestone-year-badge {
+            background: linear-gradient(135deg, var(--secondary) 0%, #a855f7 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+
+        .milestone-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .milestone-description {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .milestone-highlights {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .highlight-tag {
+            padding: 0.4rem 0.9rem;
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            color: var(--secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            border: 1px solid rgba(8, 145, 178, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-tag:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Image Styling */
+        .image-wrapper {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+            background: #f1f5f9;
+            transition: all 0.5s ease;
+        }
+
+        .image-wrapper:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(11, 17, 32, 0.9), transparent);
+            color: white;
+        }
+
+        .image-overlay-year {
+            font-size: 3.5rem;
+            font-weight: 800;
+            opacity: 0.4;
+            line-height: 1;
+            background: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-item.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Founder Quote Section */
+        .founder-quote-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2542 100%);
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -2rem;
+            left: 5%;
+            font-size: 35rem;
+            font-family: Georgia, serif;
+            color: rgba(255, 255, 255, 0.02);
+            line-height: 1;
+        }
+
+        .founder-quote-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #a855f7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: floatBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .founder-quote {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: white;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .founder-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .founder-title {
+            font-size: 1rem;
+            color: #94a3b8;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 8rem 0;
+            background: var(--bg-light);
+        }
+
+        .values-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .values-header h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .values-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), #a855f7);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(8, 145, 178, 0.1);
+            box-shadow: 0 20px 50px rgba(8, 145, 178, 0.12);
+        }
+
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .value-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .journey-cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0e7490 100%);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .journey-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+            animation: rotateBg 20s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .journey-cta h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-cta p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-btn-light {
+            background: white;
+            color: var(--secondary);
+        }
+
+        .cta-btn-light:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn-outline:hover {
+            background: white;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .timeline-milestone {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .timeline-milestone:nth-child(odd) .milestone-image,
+            .timeline-milestone:nth-child(even) .milestone-image {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .timeline-milestone:nth-child(odd) .timeline-node-wrapper,
+            .timeline-milestone:nth-child(even) .timeline-node-wrapper {
+                display: none;
+            }
+
+            .timeline-milestone:nth-child(odd) .milestone-content,
+            .timeline-milestone:nth-child(even) .milestone-content {
+                grid-column: 1;
+                grid-row: 2;
+                text-align: center;
+            }
+
+            .milestone-highlights,
+            .timeline-milestone:nth-child(even) .milestone-highlights {
+                justify-content: center;
+            }
+
+            .milestone-year,
+            .timeline-milestone:nth-child(even) .milestone-year {
+                justify-content: center;
+            }
+
+            .modern-timeline::before {
+                display: none;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-hero h1 {
+                font-size: 3rem;
+            }
+
+            .journey-stats {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .journey-stat {
+                flex: 1 1 40%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .journey-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .milestone-title {
+                font-size: 1.6rem;
+            }
+
+            .founder-quote {
+                font-size: 1.3rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .journey-stats {
+                gap: 1rem;
+            }
+
+            .journey-stat {
+                flex: 1 1 45%;
+            }
+
+            .journey-stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+  <script type="module" crossorigin src="/gppl_website/assets/main-lSLPMPgn.js"></script>
+  <link rel="stylesheet" crossorigin href="/gppl_website/assets/main-JlEPMPiP.css">
+</head>
+
+<body class="light-theme">
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo-final.png" alt="Ghaziabad Polymers" class="logo-img">
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="dropdown-toggle active">The Corporate <span
+                                class="dropdown-arrow"></span></a>
+                        <div class="dropdown-menu">
+                            <a href="about.html">About Us</a>
+                            <a href="journey.html">Our Journey</a>
+                            <a href="clientele.html">Clientele</a>
+                        </div>
+                    </div>
+                    <a href="index.html#products">Our Products</a>
+                    <a href="newsletter.html">Newsletter</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="journey-hero">
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="journey-hero-content">
+                <div class="journey-badge">
+                    <span class="journey-badge-icon">🏭</span>
+                    <span>Est. 1995 • Made in India</span>
+                </div>
+                <h1>Our Journey of Excellence</h1>
+                <p class="journey-hero-subtitle">
+                    From a modest facility in Ghaziabad to serving clients across continents —
+                    discover the story of GPPL's three decades of innovation, quality, and commitment.
+                </p>
+                <div class="journey-stats">
+                    <div class="journey-stat">
+                        <span class="journey-stat-number">30+</span>
+                        <span class="journey-stat-label">Years Strong</span>
+                    </div>
+                    <div class="journey-stat">
+                        <span class="journey-stat-number">200+</span>
+                        <span class="journey-stat-label">Team Members</span>
+                    </div>
+                    <div class="journey-stat">
+                        <span class="journey-stat-number">15+</span>
+                        <span class="journey-stat-label">Countries Served</span>
+                    </div>
+                    <div class="journey-stat">
+                        <span class="journey-stat-number">500+</span>
+                        <span class="journey-stat-label">Projects Delivered</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="modern-timeline-section">
+            <div class="container">
+                <div class="timeline-intro reveal-item">
+                    <h2>Milestones That Define Us</h2>
+                    <p>Every year brought new challenges, and every challenge strengthened our resolve to deliver
+                        excellence.</p>
+                </div>
+
+                <div class="modern-timeline">
+                    <!-- 1995 -->
+                    <div class="timeline-milestone reveal-item">
+                        <div class="milestone-image">
+                            <div class="image-wrapper">
+                                <img src="assets/images/timeline-1995.jpg" alt="GPPL Factory 1995"
+                                    onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop'">
+                                <div class="image-overlay">
+                                    <div class="image-overlay-year">1995</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-node-wrapper">
+                            <div class="timeline-node"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-year">
+                                <span class="milestone-year-badge">1995</span>
+                            </div>
+                            <h3 class="milestone-title">The Genesis</h3>
+                            <p class="milestone-description">
+                                In the industrial heartland of Ghaziabad, Uttar Pradesh, GPPL was born with a singular
+                                vision —
+                                to manufacture world-class FRP products that stand the test of time. Starting with just
+                                20 dedicated
+                                employees and a modest facility, we began crafting quality roofing sheets, moulded
+                                components, and storage tanks.
+                            </p>
+                            <div class="milestone-highlights">
+                                <span class="highlight-tag">20 Employees</span>
+                                <span class="highlight-tag">First Facility</span>
+                                <span class="highlight-tag">FRP Pioneer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2004 -->
+                    <div class="timeline-milestone reveal-item">
+                        <div class="milestone-image">
+                            <div class="image-wrapper">
+                                <img src="assets/images/timeline-2004-new.png"
+                                    alt="GPPL Expansion 2004 - Fume Exhaust Manufacturing">
+                                <div class="image-overlay">
+                                    <div class="image-overlay-year">2004</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-node-wrapper">
+                            <div class="timeline-node"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-year">
+                                <span class="milestone-year-badge">2004</span>
+                            </div>
+                            <h3 class="milestone-title">Decade of Growth</h3>
+                            <p class="milestone-description">
+                                Within a decade, GPPL transformed into a symbol of innovation and industrial excellence.
+                                Our facility expanded to 6,000 sq. yards, our workforce strengthened, and we introduced
+                                cutting-edge solutions including fume exhaust systems and advanced chemical handling
+                                equipment.
+                            </p>
+                            <div class="milestone-highlights">
+                                <span class="highlight-tag">6,000 Sq. Yards</span>
+                                <span class="highlight-tag">Fume Exhaust Systems</span>
+                                <span class="highlight-tag">Chemical Handling</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2016 -->
+                    <div class="timeline-milestone reveal-item">
+                        <div class="milestone-image">
+                            <div class="image-wrapper">
+                                <img src="assets/images/timeline-2016-new.png"
+                                    alt="GPPL ETP and Water Treatment Solutions 2016">
+                                <div class="image-overlay">
+                                    <div class="image-overlay-year">2016</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-node-wrapper">
+                            <div class="timeline-node"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-year">
+                                <span class="milestone-year-badge">2016</span>
+                            </div>
+                            <h3 class="milestone-title">Global Footprint</h3>
+                            <p class="milestone-description">
+                                GPPL crossed borders, earning recognition across continents. From the Middle East to
+                                Africa,
+                                our solutions began serving international clients. We also pioneered environmental
+                                responsibility
+                                by introducing state-of-the-art Effluent and Sewage Treatment Plants.
+                            </p>
+                            <div class="milestone-highlights">
+                                <span class="highlight-tag">International Exports</span>
+                                <span class="highlight-tag">ETP Solutions</span>
+                                <span class="highlight-tag">ISO Certified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="timeline-milestone reveal-item">
+                        <div class="milestone-image">
+                            <div class="image-wrapper">
+                                <img src="assets/images/timeline-2025-new.png"
+                                    alt="GPPL State-of-Art Manufacturing 2025">
+                                <div class="image-overlay">
+                                    <div class="image-overlay-year">2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-node-wrapper">
+                            <div class="timeline-node"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-year">
+                                <span class="milestone-year-badge">2025</span>
+                            </div>
+                            <h3 class="milestone-title">Powerhouse of Innovation</h3>
+                            <p class="milestone-description">
+                                Today, GPPL stands as a powerhouse with over 200 skilled professionals and a product
+                                portfolio
+                                that includes moulded gratings, pultruded sections, decking sheets, and cable trays.
+                                Our infrastructure now features Ritmo polyfusion machinery and advanced 25-ton
+                                pultrusion lines.
+                            </p>
+                            <div class="milestone-highlights">
+                                <span class="highlight-tag">200+ Team</span>
+                                <span class="highlight-tag">Pultrusion Tech</span>
+                                <span class="highlight-tag">100x Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Quote Section -->
+        <section class="founder-quote-section">
+            <div class="container">
+                <div class="founder-quote-container reveal-item">
+                    <div class="founder-avatar">CS</div>
+                    <p class="founder-quote">
+                        "From humble beginnings to global recognition, our 30-year journey stands as a testament
+                        to quality, integrity, and teamwork. With gratitude and pride, I thank every hand and
+                        heart that has shaped GPPL's excellence."
+                    </p>
+                    <div class="founder-name">C.V. Singh</div>
+                    <div class="founder-title">Founder & Director, GPPL</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="container">
+                <div class="values-header reveal-item">
+                    <h2>The Pillars of Our Success</h2>
+                    <p>These core values have guided every decision and shaped our legacy over three decades.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card reveal-item">
+                        <div class="value-icon">🎯</div>
+                        <h3>Precision Engineering</h3>
+                        <p>Every product is crafted with meticulous attention to detail, meeting international quality
+                            standards and exceeding client expectations.</p>
+                    </div>
+                    <div class="value-card reveal-item">
+                        <div class="value-icon">🌱</div>
+                        <h3>Sustainable Future</h3>
+                        <p>We are committed to environmental responsibility, developing solutions that protect both
+                            industry and nature for generations to come.</p>
+                    </div>
+                    <div class="value-card reveal-item">
+                        <div class="value-icon">🤝</div>
+                        <h3>Trust & Integrity</h3>
+                        <p>Built on decades of honest partnerships, we value relationships over transactions, making
+                            client success our ultimate measure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="journey-cta">
+            <div class="container">
+                <h2>Be Part of Our Next Chapter</h2>
+                <p>Whether you're seeking industrial solutions or exploring partnership opportunities, we'd love to
+                    connect with you.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-btn cta-btn-light">Get in Touch</a>
+                    <a href="index.html#products" class="cta-btn cta-btn-outline">Explore Products</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/images/logo-final.png" alt="Ghaziabad Polymers">
+                    </a>
+                    <p>Your trusted partner for industrial storage and environmental solutions. ISO 9001:2015 Certified
+                        Company.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <svg class="contact-icon-svg" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ghaziabad+Polymers+Pvt+Ltd"
+                                target="_blank">
+                                C-136, Site-1, Buland Shahar Road, Industrial Area, Ghaziabad - 201009, UP, India
+                            </a>
+                        </li>
+                        <li>
+                            <svg class="contact-icon-svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <a href="tel:+919871208575">+91 9871208575</a>
+                        </li>
+                        <li style="align-items: flex-start;">
+                            <svg class="contact-icon-svg" viewBox="0 0 24 24" style="margin-top: 5px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <a href="mailto:manusinghgppl@gmail.com">manusinghgppl@gmail.com</a>
+                                <a href="mailto:meghasinghgppl@gmail.com">meghasinghgppl@gmail.com</a>
+                                <a href="mailto:gppl.tankprojects@gmail.com">gppl.tankprojects@gmail.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-bar">
+                <p>&copy; 2026 Ghaziabad Polymers Pvt. Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const revealItems = document.querySelectorAll('.reveal-item');
+
+            const revealOnScroll = function () {
+                revealItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (itemTop < windowHeight - 100) {
+                        item.classList.add('revealed');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Initial check
+        });
+    </script>
+</body>
+
+</html>
