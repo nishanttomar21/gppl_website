@@ -540,6 +540,252 @@
             transform: translateX(5px);
         }
 
+        /* Section Badge */
+        .section-badge {
+            display: inline-block;
+            padding: 0.6rem 1.25rem;
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border: 1px solid rgba(8, 145, 178, 0.2);
+            border-radius: 50px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        /* Featured Logos Section */
+        .featured-logos-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--white) 0%, var(--bg-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-logos-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(8, 145, 178, 0.2), transparent);
+        }
+
+        /* Logo Marquee */
+        .logo-marquee-wrapper {
+            position: relative;
+            margin-top: 3rem;
+            overflow: hidden;
+        }
+
+        .logo-marquee {
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .logo-track {
+            display: flex;
+            gap: 4rem;
+            animation: marquee-scroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+            height: 80px;
+            padding: 1rem 2rem;
+            background: var(--white);
+            border-radius: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(8, 145, 178, 0.15);
+            border-color: rgba(8, 145, 178, 0.2);
+        }
+
+        .logo-item img {
+            max-width: 120px;
+            max-height: 50px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .logo-fallback {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .logo-item:hover .logo-fallback {
+            background: linear-gradient(135deg, var(--secondary) 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* Marquee Fade Effects */
+        .marquee-fade {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .marquee-fade-left {
+            left: 0;
+            background: linear-gradient(90deg, var(--bg-light) 0%, transparent 100%);
+        }
+
+        .marquee-fade-right {
+            right: 0;
+            background: linear-gradient(270deg, var(--bg-light) 0%, transparent 100%);
+        }
+
+        /* Enhanced Client Cards with Logo Support */
+        .client-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .client-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary) 0%, #06b6d4 100%);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+            transform-origin: bottom;
+        }
+
+        .client-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(8, 145, 178, 0.12);
+            border-color: rgba(8, 145, 178, 0.2);
+        }
+
+        .client-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .client-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(50%);
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover .client-logo img {
+            filter: grayscale(0%);
+        }
+
+        .client-card:hover .client-logo {
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+            transform: scale(1.05);
+        }
+
+        .client-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover .client-icon {
+            background: linear-gradient(135deg, var(--secondary) 0%, #06b6d4 100%);
+            color: var(--white);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .client-info h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .client-card:hover .client-info h3 {
+            color: var(--secondary);
+        }
+
+        .client-info .industry-tag {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
         /* Section Header */
         .section-title-alt {
             text-align: center;
@@ -589,10 +835,28 @@
             .trust-section h2 {
                 font-size: 2rem;
             }
+
+            .logo-track {
+                gap: 2rem;
+            }
+
+            .logo-item {
+                min-width: 120px;
+                padding: 0.75rem 1.25rem;
+            }
+
+            .logo-item img {
+                max-width: 80px;
+                max-height: 35px;
+            }
+
+            .marquee-fade {
+                width: 60px;
+            }
         }
     </style>
-  <script type="module" crossorigin src="/gppl_website/assets/main-lSLPMPgn.js"></script>
-  <link rel="stylesheet" crossorigin href="/gppl_website/assets/main-JlEPMPiP.css">
+  <script type="module" crossorigin src="/gppl_website/assets/main-DGI7fQar.js"></script>
+  <link rel="stylesheet" crossorigin href="/gppl_website/assets/main-fSBYiUfg.css">
 </head>
 
 <body class="light-theme">
@@ -678,6 +942,101 @@
                     <button class="filter-btn" data-filter="fmcg">FMCG</button>
                     <button class="filter-btn" data-filter="steel">Steel & Metals</button>
                     <button class="filter-btn" data-filter="energy">Energy & Power</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Clients Logo Marquee -->
+        <section class="featured-logos-section">
+            <div class="container">
+                <div class="section-title-alt">
+                    <span class="section-badge">Trusted Partners</span>
+                    <h2>Featured Clients</h2>
+                    <p>Proud to serve leading brands across industries</p>
+                </div>
+
+                <!-- Logo Marquee -->
+                <div class="logo-marquee-wrapper">
+                    <div class="logo-marquee">
+                        <div class="logo-track">
+                            <!-- First set of logos using Clearbit Logo API -->
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/honda.com" alt="Honda"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Honda</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/tata.com" alt="Tata"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>TATA</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/hul.co.in" alt="Hindustan Unilever"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>HUL</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/gsk.com" alt="GlaxoSmithKline"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>GSK</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/heromotocorp.com" alt="Hero"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Hero</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/denso.com" alt="Denso"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>DENSO</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/jindalsteel.com" alt="Jindal"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Jindal</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/emamiltd.in" alt="Emami"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Emami</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/reckitt.com" alt="Reckitt"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Reckitt</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/luminousindia.com" alt="Luminous"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Luminous</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/varunbeverages.com" alt="Varun Beverages"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Varun</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/jbmgroup.com" alt="JBM"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>JBM</span>'">
+                            </div>
+                            <!-- Duplicate for seamless loop -->
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/honda.com" alt="Honda"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Honda</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/tata.com" alt="Tata"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>TATA</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/hul.co.in" alt="Hindustan Unilever"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>HUL</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/gsk.com" alt="GlaxoSmithKline"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>GSK</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/heromotocorp.com" alt="Hero"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>Hero</span>'">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://logo.clearbit.com/denso.com" alt="Denso"
+                                    onerror="this.parentElement.innerHTML='<span class=\'logo-fallback\'>DENSO</span>'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marquee-fade marquee-fade-left"></div>
+                    <div class="marquee-fade marquee-fade-right"></div>
                 </div>
             </div>
         </section>
