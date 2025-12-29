@@ -248,6 +248,115 @@ header.header-scrolled .nav-links a:hover {
   width: 100%;
 }
 
+/* Dropdown Menu Styles */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.nav-dropdown .dropdown-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-dropdown .dropdown-arrow::before,
+.nav-dropdown .dropdown-arrow::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-dropdown .dropdown-arrow::before {
+  transform: rotate(45deg);
+  left: 2px;
+}
+
+.nav-dropdown .dropdown-arrow::after {
+  transform: rotate(-45deg);
+  right: 2px;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown:hover .dropdown-arrow::before,
+.nav-dropdown:hover .dropdown-arrow::after {
+  background: var(--secondary);
+}
+
+.nav-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown .dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-main) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-dropdown .dropdown-menu a::after {
+  display: none;
+}
+
+.nav-dropdown .dropdown-menu a:hover {
+  background: var(--bg-light);
+  color: var(--secondary) !important;
+  padding-left: 2rem;
+}
+
+/* Home header dropdown (before scroll) */
+header.home-header:not(.header-scrolled) .dropdown-menu {
+  background: rgba(11, 17, 32, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header.home-header:not(.header-scrolled) .dropdown-menu a {
+  color: var(--white) !important;
+}
+
+header.home-header:not(.header-scrolled) .dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--secondary) !important;
+}
+
 .mobile-menu-btn {
   display: none;
   font-size: 1.5rem;
